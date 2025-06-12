@@ -1,0 +1,40 @@
+server:
+  port: 12001
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: risk-asset-management
+  
+  datasource:
+    url: jdbc:h2:mem:riskassetdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+
+logging:
+  level:
+    com.jpmc.riskasset: DEBUG
+    org.springframework.web: DEBUG
