@@ -8,6 +8,7 @@ com/jpmc/riskasset/config/OpenApiConfig.class
 com/jpmc/riskasset/service/AssetService.class
 com/jpmc/riskasset/controller/AssetController.class
 com/jpmc/riskasset/model/RiskAssessment$AssessmentStatus.class
+com/jpmc/riskasset/config/DataLoader.class
 com/jpmc/riskasset/model/RiskAssessment$RiskType.class
 com/jpmc/riskasset/controller/RiskAssessmentController.class
 com/jpmc/riskasset/model/Asset.class
