@@ -68,6 +68,20 @@ npm start
 
 The frontend will start on `http://localhost:12000`
 
+### Grafana Dashboard Setup
+
+1. Navigate to the grafana directory:
+```bash
+cd grafana
+```
+
+2. Start the Grafana dashboard (requires Docker):
+```bash
+./start-grafana.sh
+```
+
+The Grafana dashboard will be available at `http://localhost:3000` (admin/admin123)
+
 ## 📊 Features
 
 ### Asset Management
@@ -87,6 +101,13 @@ The frontend will start on `http://localhost:12000`
 - **Risk Statistics**: Total assessments, distribution by level and type
 - **Visual Charts**: Pie charts, bar charts for data visualization
 - **Key Metrics**: Critical risks, assessments due for review
+
+### Grafana Performance Dashboard
+- **Real-time Monitoring**: 30-second auto-refresh with live API integration
+- **Performance KPIs**: Asset counts, risk levels, compliance scores
+- **Advanced Analytics**: Risk heat maps, trend analysis, business unit performance
+- **Executive Views**: High-level summaries and distribution charts
+- **Custom Visualizations**: Gauges, time series, tables with color coding
 
 ## 🔗 API Endpoints
 

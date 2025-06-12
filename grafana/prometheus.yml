@@ -1,0 +1,28 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'jpmc-risk-api'
+    static_configs:
+      - targets: ['work-2-ipizlxbbppnfocgs.prod-runtime.all-hands.dev:443']
+    scheme: https
+    metrics_path: '/api/actuator/prometheus'
+    scrape_interval: 30s
+    scrape_timeout: 10s
+
+  - job_name: 'jpmc-risk-api-custom'
+    static_configs:
+      - targets: ['work-2-ipizlxbbppnfocgs.prod-runtime.all-hands.dev:443']
+    scheme: https
+    metrics_path: '/api/dashboard/stats'
+    scrape_interval: 30s
+    scrape_timeout: 10s

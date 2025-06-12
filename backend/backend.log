@@ -9113,3 +9113,1496 @@ Hibernate:
 2025-06-12T11:52:25.566Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
 2025-06-12T11:52:25.566Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{assets={total=8, high=3, critical=2, low=0, typeDistribution={PHYSICAL_ASSET=1, INTELLECTUAL_PROPER (truncated)...]
 2025-06-12T11:52:25.566Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-12T11:54:47.442Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/api-docs", parameters={}
+2025-06-12T11:54:47.442Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2025-06-12T11:54:47.786Z  INFO 18295 --- [risk-asset-management] [io-12001-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 343 ms
+2025-06-12T11:54:47.788Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2025-06-12T11:54:47.790Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2025-06-12T11:54:47.791Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-12T11:54:53.192Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/api-docs", parameters={}
+2025-06-12T11:54:53.192Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2025-06-12T11:54:53.196Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2025-06-12T11:54:53.198Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2025-06-12T11:54:53.198Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-12T11:54:59.774Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/api-docs", parameters={}
+2025-06-12T11:54:59.775Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2025-06-12T11:54:59.778Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2025-06-12T11:54:59.780Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2025-06-12T11:54:59.780Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-12T11:55:09.976Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/dashboard/stats", parameters={}
+2025-06-12T11:55:09.977Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.jpmc.riskasset.controller.DashboardController#getDashboardStats()
+2025-06-12T11:55:09.978Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-8] c.jpmc.riskasset.service.AssetService    : Fetching all assets
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.asset_value,
+        a1_0.business_unit,
+        a1_0.category,
+        a1_0.created_date,
+        a1_0.criticality_level,
+        a1_0.description,
+        a1_0.last_updated,
+        a1_0.name,
+        a1_0.owner_email,
+        a1_0.owner_name,
+        a1_0.type 
+    from
+        assets a1_0
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+2025-06-12T11:55:09.989Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-8] c.j.r.service.RiskAssessmentService      : Fetching all risk assessments
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+2025-06-12T11:55:09.993Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-8] c.j.r.service.RiskAssessmentService      : Fetching assessments due for review
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.next_review_date<=?
+2025-06-12T11:55:09.994Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-12T11:55:09.995Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{assets={total=8, high=3, critical=2, low=0, typeDistribution={PHYSICAL_ASSET=1, INTELLECTUAL_PROPER (truncated)...]
+2025-06-12T11:55:09.995Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-12T11:55:13.754Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/dashboard/stats", parameters={}
+2025-06-12T11:55:13.755Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.jpmc.riskasset.controller.DashboardController#getDashboardStats()
+2025-06-12T11:55:13.755Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-3] c.jpmc.riskasset.service.AssetService    : Fetching all assets
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.asset_value,
+        a1_0.business_unit,
+        a1_0.category,
+        a1_0.created_date,
+        a1_0.criticality_level,
+        a1_0.description,
+        a1_0.last_updated,
+        a1_0.name,
+        a1_0.owner_email,
+        a1_0.owner_name,
+        a1_0.type 
+    from
+        assets a1_0
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+2025-06-12T11:55:13.766Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-3] c.j.r.service.RiskAssessmentService      : Fetching all risk assessments
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+2025-06-12T11:55:13.770Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-3] c.j.r.service.RiskAssessmentService      : Fetching assessments due for review
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.next_review_date<=?
+2025-06-12T11:55:13.771Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-12T11:55:13.771Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{assets={total=8, high=3, critical=2, low=0, typeDistribution={PHYSICAL_ASSET=1, INTELLECTUAL_PROPER (truncated)...]
+2025-06-12T11:55:13.772Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-12T11:59:58.821Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/dashboard/stats", parameters={}
+2025-06-12T11:59:58.821Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.jpmc.riskasset.controller.DashboardController#getDashboardStats()
+2025-06-12T11:59:58.822Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-5] c.jpmc.riskasset.service.AssetService    : Fetching all assets
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.asset_value,
+        a1_0.business_unit,
+        a1_0.category,
+        a1_0.created_date,
+        a1_0.criticality_level,
+        a1_0.description,
+        a1_0.last_updated,
+        a1_0.name,
+        a1_0.owner_email,
+        a1_0.owner_name,
+        a1_0.type 
+    from
+        assets a1_0
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+2025-06-12T11:59:58.833Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-5] c.j.r.service.RiskAssessmentService      : Fetching all risk assessments
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+2025-06-12T11:59:58.837Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-5] c.j.r.service.RiskAssessmentService      : Fetching assessments due for review
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.next_review_date<=?
+2025-06-12T11:59:58.838Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-12T11:59:58.838Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{assets={total=8, high=3, critical=2, low=0, typeDistribution={PHYSICAL_ASSET=1, INTELLECTUAL_PROPER (truncated)...]
+2025-06-12T11:59:58.839Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-12T11:59:58.881Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/dashboard/risk-distribution", parameters={}
+2025-06-12T11:59:58.881Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.jpmc.riskasset.controller.DashboardController#getRiskDistribution()
+2025-06-12T11:59:58.882Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-6] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: OPERATIONAL
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+2025-06-12T11:59:58.884Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-6] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: FINANCIAL
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+2025-06-12T11:59:58.885Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-6] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: COMPLIANCE
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+2025-06-12T11:59:58.886Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-6] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: STRATEGIC
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+2025-06-12T11:59:58.887Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-6] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: REPUTATIONAL
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+2025-06-12T11:59:58.888Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-6] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: TECHNOLOGY
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+2025-06-12T11:59:58.889Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-6] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: MARKET
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+2025-06-12T11:59:58.890Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-6] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: CREDIT
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+2025-06-12T11:59:58.891Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-6] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: LIQUIDITY
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+2025-06-12T11:59:58.892Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-6] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: CYBERSECURITY
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+2025-06-12T11:59:58.895Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-12T11:59:58.895Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{byLevel={HIGH=4, MEDIUM=3, LOW=0, CRITICAL=1}, byType={CREDIT=0, LIQUIDITY=0, MARKET=1, REPUTATIONA (truncated)...]
+2025-06-12T11:59:58.896Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-12T11:59:58.930Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/dashboard/asset-distribution", parameters={}
+2025-06-12T11:59:58.931Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.jpmc.riskasset.controller.DashboardController#getAssetDistribution()
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+2025-06-12T11:59:58.938Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-12T11:59:58.938Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{byCriticality={HIGH=3, MEDIUM=3, LOW=0, CRITICAL=2}, byType={PHYSICAL_ASSET=1, INTELLECTUAL_PROPERT (truncated)...]
+2025-06-12T11:59:58.938Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-12T11:59:58.973Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/assets", parameters={}
+2025-06-12T11:59:58.973Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.jpmc.riskasset.controller.AssetController#getAllAssets()
+2025-06-12T11:59:58.973Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-3] c.jpmc.riskasset.service.AssetService    : Fetching all assets
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.asset_value,
+        a1_0.business_unit,
+        a1_0.category,
+        a1_0.created_date,
+        a1_0.criticality_level,
+        a1_0.description,
+        a1_0.last_updated,
+        a1_0.name,
+        a1_0.owner_email,
+        a1_0.owner_name,
+        a1_0.type 
+    from
+        assets a1_0
+2025-06-12T11:59:58.975Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+Hibernate: 
+    select
+        ra1_0.asset_id,
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.asset_id=?
+2025-06-12T11:59:58.980Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [java.lang.StackOverflowError]
+Hibernate: 
+    select
+        ra1_0.asset_id,
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.asset_id=?
+Hibernate: 
+    select
+        ra1_0.asset_id,
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.asset_id=?
+Hibernate: 
+    select
+        ra1_0.asset_id,
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.asset_id=?
+Hibernate: 
+    select
+        ra1_0.asset_id,
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.asset_id=?
+Hibernate: 
+    select
+        ra1_0.asset_id,
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.asset_id=?
+Hibernate: 
+    select
+        ra1_0.asset_id,
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.asset_id=?
+Hibernate: 
+    select
+        ra1_0.asset_id,
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.asset_id=?
+2025-06-12T11:59:58.983Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-12T11:59:59.026Z DEBUG 18295 --- [risk-asset-management] [o-12001-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/risk-assessments", parameters={}
+2025-06-12T11:59:59.027Z DEBUG 18295 --- [risk-asset-management] [o-12001-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.jpmc.riskasset.controller.RiskAssessmentController#getAllRiskAssessments()
+2025-06-12T11:59:59.027Z DEBUG 18295 --- [risk-asset-management] [o-12001-exec-10] c.j.r.service.RiskAssessmentService      : Fetching all risk assessments
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0
+2025-06-12T11:59:59.029Z DEBUG 18295 --- [risk-asset-management] [o-12001-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.asset_value,
+        a1_0.business_unit,
+        a1_0.category,
+        a1_0.created_date,
+        a1_0.criticality_level,
+        a1_0.description,
+        a1_0.last_updated,
+        a1_0.name,
+        a1_0.owner_email,
+        a1_0.owner_name,
+        a1_0.type 
+    from
+        assets a1_0 
+    where
+        a1_0.id=?
+Hibernate: 
+    select
+        ra1_0.asset_id,
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.asset_id=?
+2025-06-12T11:59:59.099Z DEBUG 18295 --- [risk-asset-management] [o-12001-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [java.lang.StackOverflowError]
+2025-06-12T11:59:59.100Z DEBUG 18295 --- [risk-asset-management] [o-12001-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-12T11:59:59.145Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/dashboard/stats", parameters={}
+2025-06-12T11:59:59.145Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.jpmc.riskasset.controller.DashboardController#getDashboardStats()
+2025-06-12T11:59:59.146Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-1] c.jpmc.riskasset.service.AssetService    : Fetching all assets
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.asset_value,
+        a1_0.business_unit,
+        a1_0.category,
+        a1_0.created_date,
+        a1_0.criticality_level,
+        a1_0.description,
+        a1_0.last_updated,
+        a1_0.name,
+        a1_0.owner_email,
+        a1_0.owner_name,
+        a1_0.type 
+    from
+        assets a1_0
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.criticality_level=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        assets a1_0 
+    where
+        a1_0.type=?
+2025-06-12T11:59:59.155Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-1] c.j.r.service.RiskAssessmentService      : Fetching all risk assessments
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+2025-06-12T11:59:59.159Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-1] c.j.r.service.RiskAssessmentService      : Fetching assessments due for review
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.next_review_date<=?
+2025-06-12T11:59:59.160Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-12T11:59:59.160Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{assets={total=8, high=3, critical=2, low=0, typeDistribution={PHYSICAL_ASSET=1, INTELLECTUAL_PROPER (truncated)...]
+2025-06-12T11:59:59.161Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-12T11:59:59.206Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/dashboard/risk-distribution", parameters={}
+2025-06-12T11:59:59.207Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.jpmc.riskasset.controller.DashboardController#getRiskDistribution()
+2025-06-12T11:59:59.207Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: OPERATIONAL
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+2025-06-12T11:59:59.209Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: FINANCIAL
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+2025-06-12T11:59:59.211Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: COMPLIANCE
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+2025-06-12T11:59:59.212Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: STRATEGIC
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+2025-06-12T11:59:59.213Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: REPUTATIONAL
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+2025-06-12T11:59:59.214Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: TECHNOLOGY
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+2025-06-12T11:59:59.215Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: MARKET
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+2025-06-12T11:59:59.216Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: CREDIT
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+2025-06-12T11:59:59.217Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: LIQUIDITY
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+2025-06-12T11:59:59.218Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] c.j.r.service.RiskAssessmentService      : Fetching risk assessments by type: CYBERSECURITY
+Hibernate: 
+    select
+        ra1_0.id,
+        ra1_0.assessment_date,
+        ra1_0.assessor_name,
+        ra1_0.asset_id,
+        ra1_0.description,
+        ra1_0.impact,
+        ra1_0.mitigation_strategy,
+        ra1_0.next_review_date,
+        ra1_0.probability,
+        ra1_0.risk_level,
+        ra1_0.risk_score,
+        ra1_0.risk_type,
+        ra1_0.status 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_type=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+Hibernate: 
+    select
+        count(ra1_0.id) 
+    from
+        risk_assessments ra1_0 
+    where
+        ra1_0.risk_level=?
+2025-06-12T11:59:59.221Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-12T11:59:59.221Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{byLevel={HIGH=4, MEDIUM=3, LOW=0, CRITICAL=1}, byType={CREDIT=0, LIQUIDITY=0, MARKET=1, REPUTATIONA (truncated)...]
+2025-06-12T11:59:59.222Z DEBUG 18295 --- [risk-asset-management] [io-12001-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

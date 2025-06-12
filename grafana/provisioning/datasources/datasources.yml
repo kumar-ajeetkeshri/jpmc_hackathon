@@ -1,0 +1,28 @@
+apiVersion: 1
+
+datasources:
+  - name: JPMC Risk API
+    type: marcusolsson-json-datasource
+    access: proxy
+    url: https://work-2-ipizlxbbppnfocgs.prod-runtime.all-hands.dev/api
+    isDefault: true
+    jsonData:
+      httpMethod: GET
+      timeout: 30
+    secureJsonData: {}
+    
+  - name: JPMC Risk API - Infinity
+    type: yesoreyeram-infinity-datasource
+    access: proxy
+    url: https://work-2-ipizlxbbppnfocgs.prod-runtime.all-hands.dev/api
+    jsonData:
+      auth_method: none
+      allowed_hosts:
+        - work-2-ipizlxbbppnfocgs.prod-runtime.all-hands.dev
+      timeout: 30
+    secureJsonData: {}
+
+  - name: TestData
+    type: testdata
+    access: proxy
+    isDefault: false
